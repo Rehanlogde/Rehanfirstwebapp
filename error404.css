@@ -1,0 +1,20 @@
+html, body {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 15px;
+    scroll-behavior: smooth;
+    background-color: black;
+    color: white;
+    }
+
+#header{
+    font-size: 70px;
+    text-align: center;
+    margin-top: 200px;
+    color: orange;
+}
+#description{
+    font-size: 30px;
+    text-align: center;
+    margin-top: -10px;
+    color: orange;
+}

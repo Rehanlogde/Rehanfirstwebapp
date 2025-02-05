@@ -1,0 +1,245 @@
+html, body {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 15px;
+    scroll-behavior: smooth;
+    background-color: black;
+    color: white;
+    }
+    #header{
+      margin-top: 10px;
+      display: flex;
+      padding: 3px;
+      border-bottom :0.5px solid white;
+    }
+    #buttons{
+      border-radius: 10px;
+      width: 120px;
+      text-align: center;
+      height: 50px;
+      border: none;
+      font-size: medium;
+    }
+    #buttonsec{
+      margin-left: 1100px;
+    }
+    #form {
+      margin-top: 50px;
+      margin-left: 500px;
+      margin-right: 500px;
+      padding: 5px;
+      color: black;
+      border-radius: 0px;
+      background-color: rgb(255, 255, 255);
+    }
+    input[type=text], input[type=password] , input[type=email]{
+    width: 100%;
+    padding: 16px 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    }
+    button {
+    background-color: orange;
+    color: white;
+    padding: 14px 0;
+    margin: 10px 0;
+    border: none;
+    font-size: medium;
+    width: 100%;
+    }
+    #h1 {
+    text-align:center;
+    font-size:18;
+    }
+    button:hover {
+    opacity: 0.8;
+    }
+    .formcontainer {
+    text-align: left;
+    margin: 24px 50px 12px;
+    }
+    .container {
+    padding: 16px 0;
+    text-align:left;
+    }
+    span.psw {
+    float: right;
+    padding-top: 0;
+    padding-right: 15px;
+    }
+    .register{
+    padding: 16px 0;
+    text-align:center;
+    color: black;
+    }
+  #regsitrationlink{
+  color: black;
+  }
+  #middlepart{
+  display: flex;
+  margin-top: 20px;
+  }
+  #about{
+  border: 1px solid black;
+  height: 500px;
+  width: 700px;
+  margin-top: 20px;
+  margin-left: 50px;
+  border-radius: 20px;
+  border: 2px solid black;
+  }
+#contactinfo{
+  border: 1px solid black;
+  height: 500px;
+  width: 700px;
+  margin-top: 20px;
+  margin-left: 50px;  
+  border-radius: 20px;
+  border: 2px solid black;
+  margin-right: 50px;        
+}
+#footer{
+  background-color: black;
+  height: 350px;
+  border-radius: 10px;
+  width: 1500px;
+}
+#buttonregister{
+text-decoration: none;
+color: white;
+}
+#floatingtext{
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding-left: 0px;
+  height: 55px;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 10px;
+}
+#actualfloatingtext{
+  margin-left: 250px;
+  animation: floating;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  width: 1000px;
+}
+@keyframes floating {
+  0%{
+      margin-left: 1200px;
+  }
+  100%{
+  }
+}
+    /* Change styles for span on extra small screens */
+    @media screen and (min-width : 1600px) and (max-width : 1920px){
+      #form {
+      margin: 20px;
+      margin-left: 750px;
+      width: 500px;
+      height: auto;
+  }
+  #actualfloatingtext{
+      margin-left: 500px;
+  }
+  #buttonsec {
+   margin-left: 1600px;
+  }
+    }
+    @media screen and (min-width:1125px) and (max-width:1200px) {
+  #form {
+      margin: 20px;
+      margin-left: 350px;
+      width: 500px;
+      height: auto;
+  }
+  #middlepart {
+      flex-direction: column;
+      align-items: center;
+  }
+  #about, #contactinfo {
+      width: 75%;
+      margin: 10px 0;
+  }
+  #actualfloatingtext{
+      margin-left: 70px;
+  }
+  #buttonsec {
+   margin-left: 800px;
+  }
+  #buttons {
+      width: 100px;
+      height: 40px;
+      font-size: 14px;
+  }
+  #footer{
+      width: 1180px;
+  }
+}
+@media screen and (min-width : 768px) and (max-width : 1024px) {
+  #form {
+      margin: 20px;
+      margin-left: 250px;
+      width: 500px;
+      height: auto;
+  }
+  #middlepart {
+  align-items: center;
+  }
+  #actualfloatingtext{
+      margin-left: 0px;
+  }
+  #about{
+      width: 60%;
+      margin: 10px 0;
+      margin-right: 10px;
+      margin-left: 30px;
+  }
+  #contactinfo{
+      width: 60%;
+      margin: 10px 0;
+      margin-right: 30px;
+      margin-left: 10px;
+  }
+  #buttonsec {
+   margin-left: 600px;
+  }
+  #buttons {
+      width: 100px;
+      height: 40px;
+      font-size: 14px;
+  }
+  #footer{
+      width: 965px;
+  }
+}
+@media screen and (min-width:340px) and (max-width: 580px) {
+
+  #header {
+      flex-direction: column;
+      align-items: center;
+  }
+  #buttonsec {
+      justify-content: flex-start;
+      gap: 5px;
+
+  }
+  #buttons {
+      width: 70px;
+      height: 30px;
+      font-size: 10px;
+  }
+  #middlepart {
+      flex-direction: column;
+      align-items: center;
+  }
+  #about, #contactinfo {
+      width: 95%;
+      height: auto;
+  }
+  #footer {
+      width: 10px;
+  }
+}
