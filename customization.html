@@ -1,0 +1,148 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'C:\Users\rehan\bhaiproject\bhaiwebsite1\static files\customization.css' %}">
+    <title>customization options</title>
+</head>
+<body>
+    <div id="urls">
+        <h1 align="center">URL's customizations</h1>
+        <div class="table-container">
+
+            <h2 align="center">DMZ & Network Security</h2>
+            <table class="interactive-table">        
+                <tr>
+                    <th id="th1" >Name</th>
+                    <th>URL's</th>
+                </tr>
+                <tr>
+                    <td>Perimeter Firewall</td>
+                    <td>{{url1}}</td>
+                </tr>
+                <tr>
+                    <td>Datacenter Firewall</td>
+                    <td>{{url2}}</td>
+                </tr>
+                <tr>
+                    <td>Distribution WAN Firewall</td>
+                    <td>{{url3}}</td>
+                </tr>
+                <tr>
+                    <td>Web Application Firewall</td>
+                    <td>{{url4}}</td>
+                </tr>
+                <tr>
+                    <td>NAC | ClearPass Policy Manager</td>
+                    <td>{{url5}}</td>
+                </tr>
+                <tr>
+                    <td>NAC | ClearPass Guest</td>
+                    <td>{{url6}}</td>
+                </tr>
+                <tr>
+                    <td>NAC | ClearPass Onboarding</td>
+                    <td>{{url7}}</td>
+                </tr>
+                <tr>
+                    <td>NAC | CleaPass Insight</td>
+                    <td>{{url8}}</td>
+                </tr>
+                <tr>
+                    <td>EDR & Endpoint Security</td>
+                    <td>{{url9}}</td>
+                </tr>
+            </table>
+            <div class="table-container">
+
+                <h2 align="center">Hyper Converged & Server Farm</h2>
+                <table class="interactive-table" border="2">        
+                    <tr>
+                        <th>Name</th>
+                        <th>URL's</th>
+                    </tr>
+                    <tr>
+                        <td>Production Datacenter vCenter</td>
+                        <td>{{url10}}</td>
+                    </tr>
+                    <tr>
+                        <td>Disaster Recovery Datacenter vCenter</td>
+                        <td>{{url11}}</td>
+                    </tr>
+                    <tr>
+                        <td>Production Datacenter Prism Element</td>
+                        <td>{{url12}}</td>
+                    </tr>
+                    <tr>
+                        <td>Production Datacenter Prism Central</td>
+                        <td>{{url13}}</td>
+                    </tr>
+                </table>
+                <div class="table-container">
+
+                    <h2 align="center">Backup & Disaster Recovery</h2>
+                    <table class="interactive-table" border="2">        
+                        <tr>
+                            <th>Name</th>
+                            <th>URL's</th>
+                        </tr>
+                        <tr>
+                            <td>PRA | PAM</td>
+                            <td>{{url14}}</td>
+                        </tr>
+                        <tr>
+                            <td>PRA | PAM</td>
+                            <td>{{url15}}</td>
+                        </tr>
+                        <tr>
+                            <td>Backup & Disaster Recovery</td>
+                            <td>{{url16}}</td>
+                        </tr>
+                    </table>
+
+
+            <button id="changebutton" onclick="expandarea()">Change</button>
+            <div id="userinputdiv">
+                <form action="/result" id="form">
+                    <h1 id="h1">Enter your changing url details</h1>
+                    <div class="formcontainer">
+                      <hr>
+                    <div class="container">
+                      <label for="text"><strong>Enter the Field name</strong></label>
+                      <input type="text" placeholder="Ex : Perimeter Firewall" name="fieldname" required>
+                      <label for="text"><strong>Enter the new URL</strong></label>
+                      <input type="url" placeholder="Ex : https://domain.com" name="newurl" required>
+                    </div>
+                    <button type="submit">Submit</button>
+                    </div>
+                  </form>
+            </div> 
+        </div>
+    </div>
+    <script>
+        var changinginputselement = document.getElementById('form')
+        var value  = 0
+        function expandarea() {
+            if(value == 0){
+            changinginputselement.style.width = "650px"
+            changinginputselement.style.height = "400px"
+            changinginputselement.style.overflow = "hidden"
+            changinginputselement.style.opacity = "initial"
+            value = 1
+        }
+        }
+        function againclicked(){
+            if(value == 1){
+            changinginputselement.style.width = "0px"
+            changinginputselement.style.height = "0px"
+            changinginputselement.style.overflow = "hidden"
+            changinginputselement.style.opacity = "0"
+            value = 0
+            }
+        }
+    </script>
+</body>
+</html>

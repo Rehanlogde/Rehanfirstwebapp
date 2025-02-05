@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Check</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'C:\Users\rehan\bhaiproject\bhaiwebsite1\static files\check.css' %}"> 
+</head>
+<body>
+    <div id="header">
+        <h1>Organization name</h1>  
+        <div id="buttonsec">
+            <button id="buttons"><a href="/registration" id="buttonregister" class="button2">Register</a></button>
+        </div>
+    </div>
+    <div id="floatingtext">
+        <h2 id="actualfloatingtext">Please verify your TOTP from your authenticator app to continue further</h2>
+    </div>
+    <form action="/mainhomepage" id="form">
+      <h1 id="h1">Enter your TOTP</h1>
+      <div class="formcontainer">
+        <hr>
+      <div class="container">
+        <label for="uname"><strong>TOTP (Time One-Time password)</strong></label>
+        <input type="password" placeholder="Enter TOTP" name="userTOTP" required>
+      </div>
+      <button type="submit">Submit</button>
+      <div class="register" style="background-color: #eee">
+        <label for="text" id="register">Lost MFA pin ? <a id="regsitrationlink" href="/mfapinrecovery">Click here</a></label>
+      </div>
+      </div>
+    </form>
+    <br><br>
+    </div>
+</body>
+</html>

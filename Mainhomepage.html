@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Your homepage</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'C:\Users\rehan\bhaiproject\bhaiwebsite1\static files\mainhomepage.css' %}">
+  </head>
+<body>
+<div id="header">
+  {%if customizeoption %}
+  <button id="logoutbutton"><a href="/customization" id="buttonlink">Customize</a></button>
+  {%else%} {%endif%}
+  <button id="logoutbutton"><a href="/logout" id="buttonlink">Log out</a></button>  
+      <h1 align="center" id="h1">Welcome {{username}}</h1>
+      <hr id="hline">
+    </div>
+      <div id="floatingtext">
+        <h2 id="actualfloatingtext">Access your authorized data from below</h2>
+    </div>
+    <div id="treestructure">
+      {%if dmz_restrict %}
+      
+      {%else%}
+    <div id="tree">
+      <h2 align="center"><button onclick="expand1()" id="buttons2">DMZ& Network Security</button></h2>
+      <div id="connectingline1"></div>
+      <hr id="horizontallinea">
+        <div id="groupofconnectinglines">
+          <div id="connectingline2"></div>
+          <div id="connectingline3"></div>
+          <div id="connectingline4"></div>
+          <div id="connectingline5"></div>
+          <div id="connectingline6"></div>
+          <div id="connectingline7"></div>
+          <div id="connectingline8"></div>
+          <div id="connectingline9"></div>
+          <div id="connectingline10"></div>
+        </div>
+      <div id="rowa">
+          <button id="buttons"><a href= "{{pfurl}}" id="buttonlink">Perimeter Firewall</a></button>
+          <button id="buttons"><a href="{{dcfurl}}" id="buttonlink">Datacenter Firewall</a></button>
+          <button id="buttons"><a href="{{dwfurl}}" id="buttonlink">Distribution WAN Firewall</a></button>
+          <button id="buttons"><a href="{{wafurl}}" id="buttonlink">Web Application Firewall</a></button>
+          <button id="buttons"><a href="{{nacpmurl}}" id="buttonlink">NAC | ClearPass Policy Manager</a></button>
+          <button id="buttons"><a href="{{nacgurl}}" id="buttonlink">NAC | ClearPass Guest</a></button>
+          <button id="buttons"><a href="{{nacourl}}" id="buttonlink">NAC | ClearPass Onboarding</button>
+          <button id="buttons"><a href="{{naciurl}}" id="buttonlink">NAC | CleaPass Insight</a></button>
+          <button id="buttons"><a href="{{edresurl}}" id="buttonlink">EDR & Endpoint Security</a></button>
+      </div>
+    </div>
+    <br><br>
+    {%endif%}
+
+    {%if hyperconverged_restrict %}
+
+    {%else%}
+    <div id="tree2">
+      <h2 align="center" ><button  onclick="expand2()" id="buttons2">Hyper Converged & Server Farm</button></h2>
+      <div id="connectingline1"></div>
+      <hr id="horizontallineb">
+      <div id="groupofconnectinglinesb">
+        <div id="connectingline2b"></div>
+        <div id="connectingline3b"></div>
+        <div id="connectingline4b"></div>
+        <div id="connectingline5b"></div>
+      </div>
+      <div id="rowb">
+          <button id="buttons"><a href="{{pdcurl}}" id="buttonlink">Production Datacenter vCenter</a></button>
+          <button id="buttons"><a href="{{drdcurl}}" id="buttonlink">Disaster Recovery Datacenter vCenter</a></button>
+          <button id="buttons"><a href="{{pdpeurl}}" id="buttonlink">Production Datacenter Prism Element</a></button>
+          <button id="buttons"><a href="{{pdpcurl}}" id="buttonlink">Production Datacenter Prism Central</a></button>
+      </div>
+    </div>
+    <br><br>
+    {%endif%}
+    {%if backup_restrict%}
+    {%else%}
+    <div id="tree3">
+      <h2 align="center" ><button  onclick="expand3()" id="buttons2">Backup & Disaster Recovery</button></h2>
+      <div id="connectingline1"></div>
+      <hr id="horizontallinec">
+      <div id="groupofconnectinglinesc">
+        <div id="connectingline2c"></div>
+        <div id="connectingline3c"></div>
+        <div id="connectingline4c"></div>
+      </div>
+      <div id="rowc">
+          <button id="buttons"><a href="{{pra1url}}" id="buttonlink">PRA | PAM</a></button>
+          <button id="buttons"><a href="{{pra2url}}" id="buttonlink">PRA | PAM</a></button>
+          <button id="buttons"><a href="{{bdrurl}}" id="buttonlink">Backup & Disaster Recovery</a></button>
+      </div>
+    </div>
+    {%endif%}
+  </div>
+<script>
+
+  var value1 = 0
+  var value2 = 0
+  var value3 = 0
+
+  var element1 = document.getElementById('tree')
+  var element2 = document.getElementById('tree2')
+  var element3 = document.getElementById('tree3')
+
+ function expand1()
+ {
+  value1 = 1
+  value2 = 0
+  value3 = 0
+  expanding()
+ } 
+ function expand2()
+ {
+  value1 = 0
+  value2 = 1
+  value3 = 0
+  expanding()
+ }
+ function expand3()
+ {
+  value1 = 0
+  value2 = 0
+  value3 = 1
+  expanding()
+ }
+ function expanding()
+ {
+
+    if (value1 == 1 && value2 == 0 && value3 == 0){
+      if (element1) {
+      element1.style.height = "250px";
+      element1.style.border = "2px solid white"
+      element1.style.marginLeft = "70px"
+      element1.style.marginRight = "70px"
+      
+     if (element2){
+      element2.style.height = "58.5px"
+      element2.style.border = "none"
+      }
+
+    if(element3){
+      element3.style.height = "58.5px"
+      element3.style.border = "none"
+    }}
+  }
+
+    else if(value2 == 1 && value1 == 0 && value3 == 0)
+    {
+      if (element2){
+      element2.style.height = "250px"
+      element2.style.border = "2px solid white"
+      element2.style.marginLeft = "70px"
+      element2.style.marginRight = "70px"
+      if (element1) {
+      element1.style.height = "58.5px";
+      element1.style.border = "none"
+      }
+      if(element3)
+      {
+      element3.style.height = "58.5px"
+      element3.style.border = "none"
+    }}
+    }
+
+    else if(value3 == 1 && value1 == 0 && value2 == 0)
+    {
+ if(element3){
+      element3.style.height = "250px"
+      element3.style.border = "2px solid white"
+      element3.style.marginLeft = "70px"
+      element3.style.marginRight = "70px"
+      if (element1) {
+      
+      element1.style.height = "58.5px";
+      element1.style.border = "none"
+      }
+       if (element2){
+      element2.style.height = "58.5px"
+      element2.style.border = "none"
+} 
+    }}
+    else{
+      value1 = 0
+      value2 = 0
+      value3 = 0
+    }
+ }
+</script>
+</body>
+</html>

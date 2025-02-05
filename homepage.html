@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Log in</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'C:\Users\rehan\bhaiproject\bhaiwebsite1\static files\hompage.css' %}">
+  </head>
+  <body id="body">
+    <div id="header">
+        <h1>Organization name</h1>  
+        <div id="buttonsec">
+            <button id="buttons"><a href="/registration" id="buttonregister" class="button2">Register</a></button>
+        </div>
+    </div>
+    <div id="floatingtext">
+        <h2 id="actualfloatingtext">This MFA website allows you to enter your credentials and access many data multiple times</h2>
+    </div>
+    <form action="/verifying" id="form">
+      <h1 id="h1">Enter your credentials</h1>
+      <div class="formcontainer">
+        <hr>
+      <div class="container">
+        <label for="uname"><strong>Username</strong></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+        <label for="psw"><strong>Password</strong></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+      </div>
+      <button type="submit">Login</button>
+      <div class="register" style="background-color: #eee">
+        <label for="text" id="register">Don't registered ? <a id="regsitrationlink" href="/registration">Register here</a></label>
+      </div>
+      </div>
+    </form>
+    <br><br>
+    </div>
+
+  </body>
+</html>

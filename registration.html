@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'C:\Users\rehan\bhaiproject\bhaiwebsite1\static files\registration.css' %}">
+  </head>
+  <body id="body">
+    <div id="header">
+        <h1>Organization name</h1>  
+        <div id="buttonsec">
+            <button id="buttons"><a href="/ " id="buttonregister" class="button2">Login</a></button>
+        </div>
+      </div>
+    <form action="/registrationresult" id="form">
+      <h1 id="h1">Enter your details</h1>
+      <div class="formcontainer">
+        <hr>
+      <div class="container">
+        <label for="ufullname"><strong>First name</strong></label>
+        <input type="text" name="firstname" placeholder="Firstname">
+        <label for="ufullname"><strong>Last name</strong></label>
+        <input type="text" name="lastname" placeholder="Lastname">
+        <label for="uname"><strong>Username</strong></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+        <label for="psw"><strong>Password</strong></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        <label for="text">Email id</label>
+        <input type="email" name="emailid" placeholder="ex: abc@gmail.com">
+        <label for="text"><strong>Date Of Birth</strong></label><br>
+        <input type="date" name="DOB"><br>
+        <label for="text"><strong>Gender</strong></label>
+        <input type="radio" name="malegender"> Male
+        <input type="radio" name="femalegender"> Female
+        <input type="radio" name="RNSg"> Rather not say  <br>
+      </div>
+      <button type="submit">Register</button>
+      <div class="register" style="background-color: #eee">
+        <label for="text" id="register">Already have an account? <a id="regsitrationlink" href="/">Login</a></label>
+      </div>
+      </div>
+    </form>
+    <br><br>
+    </div>
+
+  </body>
+</html>
